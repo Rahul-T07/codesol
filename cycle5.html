@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cycles.css">
+</head>
+<body>
+    
+
+        
+    <div class="question">
+
+        <p><span>1.</span>Write a C program in the menu-driven style to perform the operations +, -, *, /, % between two given integers.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+                int main(){
+                    int a,b,c;
+                
+                    do{
+                    printf("Enter the first number: ");
+                    scanf("%d",&a);
+                    printf("Enter the second number: ");
+                    scanf("%d",&b);
+                    printf("1.Addition\n");
+                    printf("2.Subtraction\n");
+                    printf("3.Multiply\n");
+                    printf("4.Divide\n");
+                    printf("5.Modulus\n");
+                    printf("6.Exit\n");
+                    printf("Enter your choice: ");
+                    scanf("%d",&c);
+                    
+                        switch(c){
+                            case 1:
+                        printf("The addition of 2 numbers is: %d\n",a+b);
+                    break;
+                    // fun();
+                    case 2:
+                        printf("The differnce of 2 numbers is: %d\n",a-b);
+                    break;
+                    // fun();
+                    case 3:
+                    printf("The product of 2 numbers is: %d\n",a*b);
+                    break;
+                    // fun();
+                    case 4:
+                    printf("The division of 2 numbers is: %d\n",a/b);
+                    break;
+                    // fun();
+                    case 5:
+                    printf("The modulus of 2 numbers is: %d\n",a%b);
+                    
+                    // fun();
+                        }
+                    
+                    }while(c<=5);
+                    
+                }
+        </pre>
+
+    </div>
+
+
+    
+    <div class="question">
+
+        <p><span>2.</span>Write a C program to find the largest and the least of some numbers given by the user.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            
+#include <stdio.h>
+
+    int main(){
+        int n,i,min,max;
+        printf("Enter total number of elements: ");
+        scanf("%d",&n);
+        int a[n];
+        
+        for(i=0;i<n;i++){
+          
+            printf(<q>Enter the number: </q>);
+            scanf(<q>%d</q>,&a[i]);
+        }
+        
+        min = max = a[0];
+        
+        for(i=1;i<n;i++){
+            if(a[i]>max){
+                max = a[i];
+            }
+            if(a[i]<min){
+                min = a[i];
+            }
+        }
+        printf(<q>The largest number is: %d\n</q>,max);
+        printf(<q>The smallest number is: %d\n</q>,min);
+        
+    }
+        </pre>
+
+    </div>
+
+
+    
+    <div class="question">
+
+        <p><span>3.</span>Write a program to find the sum of individual digits of a given number.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+
+                int main(){
+                    int sum=0,n,lastdigit;
+                    printf("Enter an integer : ");
+                    scanf("%d",&n);
+                    printf("The sum of digits of the given number %d ",n);
+                    while(n!=0){
+                        lastdigit = n % 10;
+                        sum += lastdigit;
+                        n/=10;
+                    }
+                    printf("= %d\n",sum);
+                    
+                    
+                }
+        </pre>
+
+    </div>
+
+
+
+
+    
+
+
+
+</body>
+</html>

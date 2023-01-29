@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cycles.css">
+</head>
+<body>
+    
+   <div>
+    <div class="question">
+
+        <p><span>1.</span>Write a program to find the addition of two matrices.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            <code>
+            #include <stdio.h>
+
+                int main(){
+                    int r1,c1,order,r2,c2,order1,i=0,j,lp;
+                    // int result[i][j];
+                    
+                    
+                    printf("Enter the row & column sizes of matrix-1 : ");
+                    scanf("%d %d",&r1,&c1);
+                    order = r1 *c1;
+                    int a[r1][c1];
+                    printf("Enter matrix-1 %d elements : ",order);
+                    for(i = 0; i &lt =r1-1;i++){
+                        for(j=0;j &lt=c1-1;j++){
+                            scanf("%d",&a[i][j]);
+                        }
+                    }
+                    
+                    printf("Enter the row & column sizes of matrix-2 : ");
+                    scanf("%d %d",&r2,&c2);
+                    int b[r2][c2];
+                    
+                    order1 = r2 * c2;
+                    printf("Enter matrix-2 %d elements : ",order1);
+                    for(i = 0;i&ltr2;i++){
+                        for( j = 0;j&ltc2;j++){
+                            scanf("%d",&b[i][j]);}
+                    }
+                    printf("The given matrix-1 is\n");
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            printf("%d ",a[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    
+                    printf("The given matrix-2 is\n");
+                    for(i=0;i&ltr2;i++){
+                        for(j=0;j&ltc2;j++){
+                            printf("%d ",b[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    int result[i][j];
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            result[i][j] = a[i][j] + b[i][j];
+                        }
+                    }
+                    
+                    
+                    if(r1==r2 && c1==c2){
+                    printf("Addition of two matrices is\n");
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            printf("%d ",result[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    }
+                    else{
+                        printf("Addition is not possible\n");
+                    }
+                    return 0;
+                }
+            </code>
+            </pre>
+
+    </div>
+
+
+    
+    <div class="question">
+
+        <p><span>2.</span>Write a program to find the subtraction of two matrices.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+
+                int main(){
+                    
+                    int r1,r2,c1,c2,order1,order2,i,j;
+                    
+                    printf("Enter the row & column sizes of matrix-1 : ");
+                    scanf("%d%d",&r1,&c1);
+                    int a[r1][c1];
+                    order1 = r1 * c1;
+                    printf("Enter matrix-1 %d elements : ",order1);
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            scanf("%d",&a[i][j]);
+                        }
+                    }
+                    printf("Enter the row & column sizes of matrix-2 : ");
+                    scanf("%d%d",&r2,&c2);
+                    order2 = r2 * c2;
+                    int b[r2][c2];
+                    printf("Enter matrix-2 %d elements : ",order2);
+                    for(i=0;i&ltr2;i++){
+                        for(j=0;j&ltc2;j++){
+                            scanf("%d",&b[i][j]);
+                        }
+                    }
+                    printf("The given matrix-1 is\n");
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            printf("%d ",a[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    printf("The given matrix-2 is\n");
+                    for(i=0;i&ltr2;i++){
+                        for(j=0;j&ltc2;j++){
+                            printf("%d ",b[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    
+                    int result[i][j];
+                    if(r1==r2 && c1==c2){
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                             result[i][j]= a[i][j] - b[i][j];
+                        }
+                    }
+                    printf("Subtraction of two matrices is\n");
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            printf("%d ",result[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    }
+                    else{
+                        printf("Subtraction is not possible\n");
+                    }
+                    
+                    
+                    
+                }
+        </pre>
+
+    </div>
+
+    
+    <div class="question">
+
+        <p><span>3.</span>Write a program to find the multiplication of two matrices.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+
+                int main(){
+                    
+                    int r1,r2,c1,c2,k,order1,order2,i,j,sum=0;
+                    
+                    printf("Enter the row & column sizes of matrix-1 : ");
+                    scanf("%d%d",&r1,&c1);
+                    order1 = r1 * c1;
+                    printf("Enter matrix-1 %d elements : ",order1);
+                    int a[r1][c1];
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            scanf("%d",&a[i][j]);
+                        }
+                    }
+                    printf("Enter the row & column sizes of matrix-2 : ");
+                    scanf("%d%d",&r2,&c2);
+                    int b[r2][c2];
+                    order2 = r2*c2;
+                    printf("Enter matrix-2 %d elements : ",order2);
+                    for(i=0;i&ltr2;i++){
+                        for(j=0;j&ltc2;j++){
+                            scanf("%d",&b[i][j]);
+                        }
+                    }
+                    printf("The given matrix-1 is\n");
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            printf("%d ",a[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    printf("The given matrix-2 is\n");
+                    for(i=0;i&ltr2;i++){
+                        for(j=0;j&ltc2;j++){
+                            printf("%d ",b[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    if(c1==r2){
+                        printf("Multiplication of two matrices is\n");
+                        int result[i][j];
+                        for(i=0;i&ltr1;i++){
+                            for(j=0;j&ltc2;j++){
+                                for(k=0;k&ltc1;k++){
+                                result[i][j] = a[i][k]*b[k][j];
+                                sum += result[i][j];
+                                }
+                                result[i][j] = sum;
+                                sum=0;
+                            }
+                        }
+                        
+                        for(i=0;i&ltr1;i++){
+                            for(j=0;j&ltc2;j++){
+                                // for(k=0;k&ltc1;k++){
+                                    printf("%d ",result[i][j]);
+                                // }
+                            }
+                            printf("\n");
+                        }
+                        
+                        
+                    }
+                    else{
+                    printf("Multiplication is not possible\n");
+                    }	
+                    return 0;
+                }
+            
+        </pre>
+
+    </div>
+
+
+    
+    <div class="question">
+
+        <p><span>4.</span>Write a C program to find whether a given matrix is a symmetric matrix or not.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+
+                int main(){
+                    
+                    
+                    int r1,c1,order,i,j,Num=0;
+                    printf("Enter the order of matrix : ");
+                    scanf("%d%d",&r1,&c1);
+                    order = r1 * c1;
+                    printf("Enter %d elements : ",order);
+                    int a[r1][c1];
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            scanf("%d", &a[i][j]);
+                        }
+                    }
+                    printf("The given matrix is\n");
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            printf("%d ",a[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    
+                    printf("Transpose of the given matrix is\n");
+                    int transpose[j][i];
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            transpose[j][i] = a[i][j];
+                        }
+                    }
+                    for(i=0;i&ltc1;i++){
+                        for(j=0;j&ltr1;j++){
+                            printf("%d ",transpose[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            if(transpose[i][j] == a[i][j]){
+                                Num++;
+                            }
+                        }
+                    }
+                    if(Num == order){
+                        printf("The given matrix is symmetric matrix\n");
+                    }else{
+                        printf("The given matrix is not symmetric matrix\n");
+                    }
+                
+                    
+                    return 0;
+                }
+        </pre>
+
+    </div>
+
+    
+    <div class="question">
+
+        <p><span>5.</span>Write a C program to find whether a given matrix is lower triangular or not.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+
+                int main(){
+                    
+                    
+                    int r1,c1,i,j,num=0;
+                    printf("Enter the number of rows: ");
+                    scanf("%d",&r1);
+                    printf("Enter the number of cols: ");
+                    scanf("%d",&c1);
+                    printf("Enter elements in matrix of size %dx%d",r1,c1);
+                    int a[i][j];
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            scanf("%d",&a[i][j]);
+                        }
+                    }
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            if(j>i){
+                                if(a[i][j]==0){
+                                    num++;
+                                }
+                            }
+                        }
+                    }
+                    if(num==3)
+                    printf("Matrix is not a lower triangular matrix\n");
+                    else 
+                    printf("Matrix is lower triangular matrix\n");
+                    return 0;
+                }
+        </pre>
+
+    </div>
+
+
+    
+    <div class="question">
+
+        <p><span>6.</span>Write a C program to find whether a given matrix is upper triangular or not.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+
+                int main(){
+                    int num=0,r1,c1,i,j;
+                    printf("Enter the number of rows: ");
+                    scanf("%d",&r1);
+                    printf("Enter the number of cols: ");
+                    scanf("%d",&c1);
+                    printf("Enter elements in matrix of size %dx%d",r1,c1);
+                    int a[r1][c1],num1=0;
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            scanf("%d",&a[i][j]);
+                        }
+                    }
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            if(i>j){
+                                num1++;
+                                if(a[i][j]==0){
+                                    num++;
+                                    
+                                }
+                            }
+                        }
+                    }
+                    
+                    // int x,b=1,sum=0;
+                    // // x=r1;
+                    // for(int i=1;i&ltr1;i++){
+                    // 	b *=i;
+                    // 	sum +=b;
+                    // 	i++;
+                    // }
+                    
+                    if(num==num1){
+                        printf("The matrix is Upper triangular matrix\n");
+                    }else {
+                        printf("The matrix is not Upper triangular matrix\n");
+                    }
+                    return 0;
+                }
+        </pre>
+
+    </div>
+
+    
+    <div class="question">
+
+        <p><span>7.</span>Write a C program to find whether a given matrix is a diagonal matrix or not.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+
+                int main(){
+                    
+                    int r1,c1,i,j,order;
+                    printf("Enter the row & column sizes of matrix : ");
+                    scanf("%d%d",&r1,&c1);
+                    order = r1*c1;
+                    printf("Enter matrix %d elements : ",order);
+                    int a[r1][c1];
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            scanf("%d",&a[i][j]);
+                        }
+                    }
+                    printf("The given matrix : \n");
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            printf("%d ",a[i][j]);
+                        }printf("\n");
+                    }
+                    int num=0;
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            if(i!=j){
+                            
+                                if(a[i][j] == 0){
+                                    num++;
+                                }
+                            }
+                        }
+                    }
+                    if(num==(order - (r1))){
+                        printf("The given matrix is a diagonal matrix\n");
+                    }
+                    else{
+                        printf("The given matrix is not a diagonal matrix\n");
+                    }
+                    
+                }
+        </pre>
+
+    </div>
+
+
+    
+    <div class="question">
+
+        <p><span>8.</span>Write a C program to find whether a given matrix is scalar or not.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            <code>
+            #include <stdio.h>
+                int main(){
+                    int r1,c1,num=0,num1=0,i,j,order;
+                    
+                    printf("Enter the row size of the matrix: ");
+                    scanf("%d",&r1);
+                    printf("Enter the column size of the matrix: ");
+                    scanf("%d",&c1);
+                    
+                    printf("Enter the matrix elements\n");
+                    order = r1*c1;
+                    int a[r1][c1];
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j &lt c1;j++){
+                            scanf("%d",&a[i][j]);
+                        }
+                    }
+                    int firstNum = a[0][0];
+                    for(i=0;i&ltr1;i++){
+                        for(j=0;j&ltc1;j++){
+                            if(i==j){
+                                if(a[0][0]==a[i][j]){
+                                    num++;
+                                }
+                            }
+                            if(i&ltj || i>j){
+                                if(a[i][j]==0){
+                                    num1++;
+                                }
+                            }
+                            
+                        }
+                    }
+                    if(num==r1 && num1==(order-r1)){
+                        printf("Matrix is a scalar matrix\n");
+                    }
+                    else{
+                        printf("Matrix is not a scalar matrix\n");
+                    }
+                    
+                    return 0;
+                }
+            </code>
+        </pre>
+
+    </div>
+
+    
+    <div class="question">
+
+        <p><span>9.</span>Write a C program to find whether a given matrix is unit or not.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+
+                int main(){
+                
+                int r1,c1,i,j,firstNum,num=0,num1=0,order;
+                printf("Enter size of the matrix : ");
+                scanf("%d",&r1);
+                printf("Enter the elements of the matrix\n");
+                order= r1*r1;
+                int a[r1][r1];
+                for(i=0;i&ltr1;i++){
+                    for(j=0;j&ltr1;j++){
+                        scanf("%d",&a[i][j]);
+                    }
+                }
+                
+                for(i=0;i&ltr1;i++){
+                    for(j=0;j&ltr1;j++){
+                        if(i==j){
+                                if(a[i][j]==1){
+                                    num++;
+                        }
+                            
+                        }
+                        if(i&ltj || i>j){
+                            if(a[i][j]==0)
+                {
+                    num1++;
+                }		}
+                    }
+                }
+                if(num==r1 && num1 == (order-r1)){
+                    printf("The matrix is an unit matrix\n");
+                }
+                else{
+                    printf("The matrix is not an unit matrix\n");
+                }
+                
+                
+                return 0;
+                }
+            
+        </pre>
+
+    </div>
+
+
+<!--     
+    <div class="question">
+
+        <p><span></span></p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            
+        </pre>
+
+    </div> -->
+</div>
+  
+</body>
+</html>

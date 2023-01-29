@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="cycles.css">
+
+
+</head>
+<body >
+
+    <div>
+        <div class="question">
+            <p><span>1.</span>Write a C program to find Area and Circumference of a Circle</p>
+        </div>
+       
+
+        <div class="solution">
+            <pre>
+            <span>code:</span><br>
+                #include <stdio.h>
+                #define PI 3.14
+                int main(){
+                float radius,area,circumference;
+                    printf("radius : ");
+                    scanf("%f",&radius);
+                    area = PI * radius * radius;
+                    circumference = 2 * PI * radius;
+                    printf("area = %f\n",area);
+                    printf("circumference = %f\n",circumference);
+                    return 0;
+                    }
+            </pre>
+        </div>
+
+
+        <div class="question"> 
+
+            <p><span>2.</span> Write a program to calculate the volume and total surface area of the sphere.
+            </p>
+        </div>
+        <div class="solution">
+            <span>CODE: </span>
+            <pre>
+                #include <stdio.h>
+                    #include <math.h>
+                    #define PI 3.14
+                    int main(){
+                        float volume, surfaceArea,radius;
+                        printf("Enter radius of the sphere : ");
+                        scanf("%f",&radius);
+                        surfaceArea = 4 * PI * radius * radius;
+                        volume = (4.0 /3) * PI * radius * radius * radius;
+                        printf("Total surface area of the sphere : %f",surfaceArea);
+                        printf("\nVolume of the sphere : %f\n",volume);
+                        return 0;
+                    }
+                
+            </pre>
+        </div>
+
+
+        
+        <div class="question"> 
+
+            <p><span>3.</span>Write a program to calculate the lateral surface area of a right circular cone of given base radius and height.</p>
+        </div>
+        <span>CODE: </span>
+        
+        <div class="solution">
+
+            <pre>
+                #include <stdio.h>
+                    #define PI 3.14
+                    int main(){
+                        float radius, lsa,height;
+                        printf("radius, height : ");
+                        scanf("%f%f",&radius,&height);
+                        lsa = PI * radius * sqrt(radius * radius + height * height);
+                        printf("surface area : %f\n",lsa);
+                    }
+            </pre>
+        </div>
+
+
+
+        
+        <div class="question"> 
+
+            <p><span>4.</span>Write a program to find the selling price of an item, given its cost price and profit percent.
+            </p>
+        </div>
+        <span>CODE: </span>
+        <div class="solution">
+            <pre>
+               
+   
+   #include <stdio.h>
+   int main(){
+   	float cp,sp,pp;
+   	printf("cost price: ");
+   	scanf("%f",&cp);
+   	printf("profit percent: ");
+   	scanf("%f",&pp);
+   	
+   	sp = cp * (100 + pp)/100;
+   	printf("selling price: %.2f\n",sp);
+   	
+   }
+            </pre>
+        </div>
+
+
+
+        
+        <div class="question"> 
+
+            <p><span>5.</span>Write a program to calculate the simple interest and compound interest by reading principal amount, rate of interest and time.</p>
+        </div>
+        <span>CODE: </span>
+        <div class="solution">
+            <pre>
+                #include <stdio.h>
+                    #include<math.h>
+                    int main(){
+                        float t,principalAmount,rateOfInterest,simpleInterest, compoundInterest;
+                        printf("Enter principle amount, rate of interest, time : ");
+                        scanf("%f%f%f",&principalAmount,&rateOfInterest,&t);
+                        simpleInterest = (principalAmount * rateOfInterest *t)/100;
+                        compoundInterest = principalAmount * pow(1+ rateOfInterest/100,t) - principalAmount;
+                        printf("Simple interest = %f\n",simpleInterest);
+                        printf("Compound interest = %f\n",compoundInterest);
+                        return 0;
+                    }
+            </pre>
+        </div>
+
+
+
+        
+        <div class="question"> 
+
+            <p><span>6.</span>Write a program to find the size of basic Data types using sizeof operator.
+            </p>
+        </div>
+        <span>CODE: </span>
+        <div class="solution">
+            <pre>
+                #include <stdio.h>
+                    int main(){
+                        printf("The size of char data type = %lu\n",sizeof(char));
+                        printf("The size of int data type = %lu\n",sizeof(int));
+                        printf("The size of short int data type = %lu\n",sizeof(short int));
+                        printf("The size of long int data type = %lu\n", sizeof(long int));
+                        printf("The size of float data type = %lu\n", sizeof(float));
+                        printf("The size of double data type = %lu\n", sizeof(double));
+                        printf("The size of long double data type = %lu\n",sizeof(long double));
+                    }
+            </pre>
+        </div>
+
+
+
+
+        
+        <div class="question"> 
+
+            <p><span>7.</span>Write a C program to display a given decimal integer into an equivalent octal number and hexadecimal number using %o and %x in printf function.
+            </p>
+        </div>
+        <span>CODE: </span>
+        <div class="solution">
+            <pre>
+                #include <stdio.h>
+                    int main(){
+                        int a;
+                        printf("Enter a decimal integer : ");
+                        scanf("%d",&a);
+                        printf("Octal number : %o\n",a);
+                        printf("Hexadecimal number : %x\n",a);
+                    }
+            </pre>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+    
+</body>
+</html>

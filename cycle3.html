@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cycles.css">
+
+</head>
+<body>
+    
+        
+    <div class="question"> 
+
+        <p><span>1.</span>Design and develop a flowchart or an algorithm that takes three coefficients (a, b, and c) of a quadratic equation (ax2+bx+c=0) as input and computes all possible roots.</p>
+    </div>
+    <span>CODE: </span>
+    <div class="solution">
+        <pre>
+          
+            #include <stdio.h>
+                #include <math.h>
+                int main(){
+                    float a,b,c ,d,i;
+                    float r1,r2;
+                    printf("Enter coefficients a, b and c : ");
+                    
+                    scanf("%f%f%f",&a,&b,&c);
+                    d = (b*b) - (4*a*c);
+                    i = (sqrt(-d))/(2*a);
+                     if (d>0 && a!=0){
+                        printf("The roots are real and distinct\n");
+                        r1 = (-b + sqrt(d))/(2*a);
+                        r2 = (-b- sqrt(d))/(2*a);
+                        printf("root1 = %f and root2 = %f\n",r1,r2);
+                         
+                     }
+                
+                    else if(b!=0 && a==0){
+                        r1 =r2= -c/b;
+                        printf("Linear equation\n");
+                        printf("Root = %f\n",r1);
+                    }
+                    
+                    
+                    else if(a==0 && b==0&&c==0){
+                        printf("Invalid coefficients\nEnter valid inputs\n");
+                    }
+                   else if(d<0){
+                        r1  =(-b/(2*a));
+                        r2 = (-b/(2*a));
+                        printf("The roots are real and imaginary\n");
+                        printf("root1 = %f+i%f\n",r1,fabs(i));
+                        printf("root2 = %f-i%f\n",r2,fabs(i));
+                    }
+                    else if(d==0){
+                        printf("The roots are real and equal\n");
+                        r1 =r2= -b/2*a;
+                        printf("root1 = root2 = %f\n",r1);
+                    }
+                }
+           
+                
+        </pre>
+    </div>
+
+        
+    <div class="question"> 
+
+        <p><span>2.</span>Write a program to find the largest and smallest of the three given integers.</p>
+    </div>
+    <span>CODE: </span>
+    <div class="solution">
+        <pre>
+          
+              #include <stdio.h>
+
+                int main(){
+                    int smallest , largest,a,b,c,max,min;
+                    printf(<q>Enter 3 integers: </q>);
+                    scanf(<q>%d%d%d</q>,&a,&b,&c);
+                    max = a;
+                    min = a;
+                    largest = (b>max && b>c)? b: (c>max && c>b) ? c :a ;
+                    smallest = (b&ltmin && b&ltc)? b: (c&ltmin && c &ltb)? c : a;
+                    printf(<q>%d is largest\n</q>,largest);
+                    printf(<q>%d is smallest\n</q>,smallest);
+                    return 0;
+                }
+           
+                
+        </pre>
+    </div>
+
+        
+    <div class="question"> 
+
+        <p><span>3.</span>A salesman gets a commission of 5% on the sales he makes if his sales is below Rs.5000/- and a commission of 8% on the sales that exceeds Rs.5000/- or equal to 5000 together with Rs.250/-</p>
+    </div>
+    <span>CODE: </span>
+    <div class="solution">
+        <pre>
+            #include <stdio.h>
+                int main(){
+                    float commission,amount ,percent;
+                    printf("Enter the sales amount : ");
+                    scanf("%f",&amount);
+                    if (amount &lt 5000){
+                        percent = 5;
+                        commission = (amount/100)*percent;
+                        printf("The commission of the salesman : %f\n",commission);
+                    }
+                    else {
+                        percent =8;
+                        commission = ((amount/100)*percent) +250;
+                        printf("The commission of the salesman : %f\n",commission);
+                        
+                    }
+                }
+        </pre>
+    </div>
+
+
+    
+        
+    <div class="question"> 
+
+        <p><span>4.</span>Write a program to find the areas of shapes like square, circle, triangle and rectangle.</p>
+    </div>
+    <span>CODE: </span>
+    <div class="solution">
+        <pre>
+            /* Write your complete code here and Map your output with the visible as well as
+   hidden test cases.*/
+   #include <stdio.h>
+   #define PI 3.14
+   #include <math.h>
+   int main(){
+   	float sideLength, radius, height1,height,base,width,areaS,AOC,AOT,AOR;
+   	printf("side length: ");
+   	scanf("%f",&sideLength);
+   	printf("radius: ");
+   	scanf("%f",&radius);
+   	printf("base, height: ");
+   	scanf("%f%f",&base,&height1);
+   	printf("width, height: ");
+   	scanf("%f%f",&width,&height);
+   	
+   areaS = sideLength*sideLength;
+   	AOC = PI * radius * radius;
+   	AOT = 0.5* base * height1;
+   	AOR = width * height;
+   	
+   	
+   	printf("Area of square: %.2f\n",areaS);
+   	printf("Area of circle: %.2f\n",AOC);
+   	printf("Area of triangle: %.2f\n",AOT);
+   	printf("Area of rectangle: %.2f\n",AOR);
+   	
+   	return 0;
+   }
+   
+        </pre>
+    </div>
+
+
+    
+</body>
+</html>

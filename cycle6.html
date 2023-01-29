@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cycles.css">
+</head>
+<body>
+    
+        
+    <div class="question">
+
+        <p><span>1.</span>Write a function in the program to return 1 if number is prime otherwise return 0.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+
+                int main(){
+                    int pNum=1, inputNum,i;
+                    printf("Enter a number : ");
+                    scanf("%d",&inputNum);
+                    
+                    for (i=2;i<=inputNum;i++){
+                        if((inputNum%i)==0){
+                            pNum++;
+                        }
+                    }
+                    if (pNum==2){
+                        printf("1\n");
+                    }
+                    else
+                        printf("0\n");
+                    
+                    return 0;
+                }
+        </pre>
+
+    </div>
+
+
+    
+    <div class="question">
+
+        <p><span>2.</span>A function that takes a real number 
+            and a positive integer 
+            as arguments and returns x^n</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+
+#include <stdio.h>
+
+    int main(){
+        int n,i,value,power,x;
+        printf("Enter base number: ");
+        scanf("%d",&x);
+        printf("Enter power number: ");
+        scanf("%d",&n);
+        value = 1;
+        for(i=1;i<=n;i++){
+            value *=x;
+            
+        }
+        printf("%d^%d = %d\n",x,n,value);
+    }
+            
+        </pre>
+
+    </div>
+
+
+    
+    <div class="question">
+
+        <p><span>3.</span>Write a program to find the nth fibonacci number.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            //Write the code here
+#include <stdio.h>
+int main(){
+	int a,b,c,i=0,n;
+	printf("Num: ");
+	scanf("%d",&n);
+	a = 0;
+	b = 1;
+	if(n==0)
+	printf("Fibonacci number : %d\n",a);
+	if(n==1)
+	printf("Fibonacci number : %d",b);
+	
+	if((n >= -10000) && (n<=10000) ){
+	if(n>1){
+	while((i< (n-1))){
+
+		c = a+b;
+		 //printf("%d",c);
+		a = b;
+		b = c;
+		i++;
+	
+	}
+		printf("Fibonacci number : %d",c);
+	}
+	else if(n&#62;0)
+	printf(<q>Invalid</q>);}
+
+	
+}
+        </pre>
+
+    </div>
+
+        
+    <div class="question">
+
+        <p><span>4.</span>Write a program to find the factorial of a given number using recursion process.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+                #include "Program901a.c"
+                int factorial(long int y){
+	
+                    if(y>1){
+                        return y * factorial(y-1);
+                    }
+                    else
+                    return 1;
+                    
+                    }
+                
+                void main() {
+                    long int n;
+                    printf("Enter an integer : ");
+                    scanf("%ld", &n);
+                    printf("Factorial of %ld is : %ld\n", n ,factorial(n));
+                }
+        </pre>
+
+    </div>
+
+
+    
+    <div class="question">
+
+        <p><span>5.</span>Draw the flowchart and write a recursive C function to find the factorial of a number, n!, defined by fact(n) = 1, if n = 0. Otherwise fact(n) = n * fact(n-1).</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+                #include "Lab14a.c"
+                int factorial(int x){
+	
+                    if(x<=0)
+                        return 1;
+                    
+                    return x * factorial(x-1);
+                  
+                  }
+                void main() {
+                    int n, r;
+                    printf("Enter the values of n and r : ");
+                    scanf("%d %d", &n, &r);
+                    if (n >= r)
+                        printf("The value of %dc%d = %d\n", n, r, factorial(n) / (factorial(r) * factorial(n - r)));
+                    else
+                        printf("Enter valid input data\n");
+                }
+            
+        </pre>
+
+    </div>
+
+
+    
+    <div class="question">
+
+        <p><span>6.</span>Write a program to find the gcd (Greatest Common Divisor) of a given two numbers using recursion process.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+                #include "Program906a.c"
+
+                int gcd(int a , int b){
+	
+                    if(a%b==0){
+                        return b;
+                    }
+                    return gcd(b,a%b);
+                }
+                void main() {
+                    int a, b;
+                    printf("Enter two integer values : ");
+                    scanf("%d %d", &a, &b);
+                    printf("The gcd of two numbers %d and %d = %d\n", a, b, gcd(a, b));
+                }
+        </pre>
+
+    </div>
+
+        
+    <div class="question">
+
+        <p><span>7.</span>Write a program to find the lcm (Least Common Multiple) of a given two numbers using recursion process.</p>
+    </div>
+
+    <div class="solution">
+        <span>COODE: </span>
+        <pre>
+            #include <stdio.h>
+                #include "Program907a.c"
+                int gcd(int a , int b){
+                    if(a%b==0){
+                        return b;
+                        
+                    }
+                    return gcd(b,a%b);
+                }
+                
+                int lcm(int a,int b){
+                    
+                    return (a*b)/gcd(a,b);
+                }
+
+                void main() {
+                    int a, b;
+                    printf("Enter two integer values : ");
+                    scanf("%d %d", &a, &b);
+                    printf("The lcm of two numbers %d and %d = %d\n", a, b, lcm(a, b));
+                }
+            
+        </pre>
+
+    </div>
+
+
+</body>
+</html>

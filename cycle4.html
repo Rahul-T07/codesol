@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cycles.css">
+</head>
+<body>
+    
+
+    <div>
+
+        <div class="question">
+
+            <p><span>1.</span>Write a C program to print a multiplication table for a given number using while loop.</p>
+        </div>
+
+        <div class="solution">
+            <span>COODE: </span>
+            <pre>
+                #include <stdio.h>
+                    int main(){
+                        int table,i,res;
+                        i = 1;
+                        printf("Enter a number: ");
+                        scanf("%d",&table);
+                        while(i<=10){
+                            printf("%d * %d = %d\n",table,i, table*i);
+                            i++;
+                        }
+                    }
+            </pre>
+
+        </div>
+
+
+        
+        <div class="question">
+
+            <p><span>2.</span>Write a program to print the multiplication table for a given number with the number of rows in the table.</p>
+        </div>
+
+        <div class="solution">
+            <span>COODE: </span>
+            <pre>
+                #include <stdio.h>
+                    int main(){
+                        int table,i,result,noOfRows;
+                        i = 1;
+                        printf("Enter an integer number : ");
+                        scanf("%d",&table);
+                        printf("Enter number of rows : ");
+                        scanf("%d",&noOfRows);
+                        while(i &lt=noOfRows){
+                            printf("%d * %d = %d\n",table,i,table*i);
+                            i++;
+                        }
+                    }
+            &lt/pre>
+
+        </div>
+
+
+        
+        <div class="question">
+
+            <p><span>3.</span>Write a program to print the multiplication table from 11 to 20.</p>
+        </div>
+
+        <div class="solution">
+            <span>COODE: </span>
+            <pre>
+                #include <stdio.h>
+                    int main(){
+                        int table,i,result;
+                        printf("Enter an integer: ");
+                        scanf("%d",&table);
+                        printf("Multiplication table of %d: \n",table);
+                        i = 11;
+                        while(i&lt=20){
+                            printf("%d * %d = %d \n",table,i,table*i);
+                            i++;
+                        }
+                    }
+            </pre>
+
+        </div>
+
+
+
+        
+        <div class="question">
+
+            <p><span>4.</span>Write a C program to read two numbers, x and n, and then compute the sum of the series (1 + x + x2 + x3 + …………. +xn).</p>
+        </div>
+
+        <div class="solution">
+            <span>COODE: </span>
+            <pre>
+                #include <stdio.h>
+                    #include <math.h>
+                    int main(){
+                        int x,n,sum = 0,a=0;
+                        printf("Enter x and n : ");
+                        scanf("%d%d",&x,&n);
+                        // printf("%f%f\n",x,n);
+                        if (x&lt0 || n&lt0){
+                            printf("Illegal values\n");
+                        }
+                        else
+                        {
+                            while(a&lt=n){
+                            sum = sum+ pow(x,a);
+                            a++;
+                            }
+                            printf("Sum of series : %d\n",sum);
+                            }
+                    }
+                   
+                    
+            </pre>
+
+        </div>
+
+
+
+        
+        <div class="question">
+
+            <p><span>5.</span>Write a C program to calculate the sum of 1! + 2! + 3! + ..... + n!.</p>
+        </div>
+
+        <div class="solution">
+            <span>COODE: </span>
+            <pre>
+                #include <stdio.h>
+
+                    int main(){
+                        int n,product=1,sum=0,i;
+                        printf("Enter n value : ");
+                        scanf("%d",&n);
+                        i = 1;
+                        while(i&lt=n){
+                            product *=i;
+                            sum = sum + product;
+                            i++;
+                        }
+                        printf("Sum of series : %d\n",sum);
+                    }
+            </pre>
+
+        </div>
+
+
+
+        
+        <div class="question">
+
+            <p><span>6.</span>Write a C program to calculate the following series value, where x is a fractional value.
+                1- X2/2! + X4/4! - X6/6! + X8/8! - X10/10!</p>
+        </div>
+
+        <div class="solution">
+            <span>COODE: </span>
+            <pre>
+                
+#include <stdio.h>
+    #include <math.h>
+    int main()
+    {
+        
+        int n,fact=1,sign=-1;
+        float x,sum=0;
+        
+        printf("Enter value of x : ");
+        scanf("%f",&x);
+        for(n=2;n&lt=10;n+=2){
+            fact = fact * n *(n-1);
+            sum += (sign * pow(x,n))/(fact);
+            sign *= -1;
+        }
+        sum++;
+        printf("Sum of series : %f\n",sum);
+        
+        return 0;
+    }
+    
+            </pre>
+
+        </div>
+
+
+
+    </div>
+</body>
+</html>
