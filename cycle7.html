@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cycle-7</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        
+        p{
+            background-color: aqua;
+            font-size: 1.54rem;
+            margin: 0;
+            margin-bottom: 20px;
+
+        }
+        pre{
+            background-color: black;
+            color: white;
+            margin-top: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div    class="body">
+        <div class="program">
+            <p> <span>1.</span>
+                    Write a menu-driven program to compute the following
+
+Return 1 when it is prime number otherwise return 0.
+To find the value of 
+.
+To return nth Fibonacci.
+            </p>
+            <pre>
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+	int fib,testPrime=0,num,fibN,result,b,e,n;
+		int prime(int num){
+			
+				for(int i=1;i<=num;i++){
+					if((num%i)==0){
+						testPrime++;
+					}
+				}
+						if(testPrime == 2)
+							return 1;
+						else
+					    	return 0;
+		
+		}
+		
+		
+		int power(int x,int y){
+	
+			
+			return pow(x,y);
+		
+		}
+		
+		
+		int fibo(int fibNum){
+			
+			int a=0,b=1;
+			int i=1,c;
+			while(i<=fibNum-2){
+				c = a+b;
+				a=b;
+				b=c;
+				i++;
+			}
+			return b;
+		
+			
+		}
+		
+		int main(){
+		
+		int choice;
+		
+		
+		do{
+			printf("1. Prime number\n2. Power\n3. Fibonacci\n4. Exit\n");
+			printf("Enter the option: ");
+			scanf("%d",&choice);
+			
+		switch(choice){
+			
+			case 1:
+				printf("Enter a number : ");
+				scanf("%d",&n);
+				printf("%d\n",prime(n));
+				break;
+			
+				
+			
+			case 2:
+				
+				printf("Enter base: ");
+				scanf("%d",&b);
+				printf("Enter exponent: ");
+				scanf("%d",&e);
+				printf("%d ^ %d = %d\n",b,e,power(b,e));
+			break;
+			
+			case 3:
+				printf("Enter a number : ");
+				scanf("%d",&fibN);
+				printf("The %d fibonacci number : %d\n",fibN,fibo(fibN));
+			break;
+			
+			case 4:
+			exit(0);
+
+			default:
+			printf("Enter valid option\n");
+			
+			
+		}
+		}while(choice>0);
+			 
+			
+			
+			
+		return 0;
+		
+}
+
+            </pre>
+        </div>
+
+         <div class="program">
+      
+            <p><span>2.</span>Write a menu driven program to compute the following functions.
+<br>
+Factorial <br>
+GCD <br>
+LCM <br>
+                
+            </p>
+            <pre>
+
+#include <stdio.h>
+#include <stdlib.h>
+int factorial(int num){
+	if(num>0)
+	return num * factorial(num-1);
+	else
+	return 1;
+}
+
+
+int gcd(int x, int y){
+	if(x%y==0)
+	return y;
+	else
+	return gcd(y,x%y);
+}
+int lcm(int a,int b){
+	return (a *b)/gcd(a,b);
+}
+
+int main(){
+	int choice,num,n,r,a,b,x,y;
+	do{
+		printf("1. Factorial\n2. ncr\n3. gcd\n4. lcm\n5. Exit\n");
+		printf("Enter the option: ");
+		scanf("%d",&choice);
+		switch(choice){
+			case 1:
+			printf("Enter an integer : ");
+			scanf("%d",&num);
+			printf("Factorial of %d is : %d\n",num,factorial(num));
+			break;
+			case 2:
+			printf("Enter the values of n and r : ");
+			scanf("%d %d",&n,&r);
+			if(n>=r)
+			printf("The value of %dc%d = %d\n",n,r,factorial(n)/(factorial(r)*factorial(n-r)));
+			else
+			printf("Enter valid input data\n");
+			break;
+			case 3:
+			printf("Enter two integer values : ");
+			scanf("%d %d",&a,&b);
+			printf("The gcd of two numbers %d and %d = %d\n",a,b,gcd(a,b));
+			break;
+			case 4:
+			printf("Enter two integer values : ");
+			scanf("%d %d",&x,&y);
+			printf("The lcm of two numbers %d and %d = %d\n",x,y,lcm(x,y));
+			break;
+			case 5:
+			exit(0);
+			default:
+			printf("Enter valid option\n");
+			
+		}
+	}while(choice>0);
+}
+
+            </pre>
+        </div>
+
+         <div class="program">
+            <p>
+                <span>3.</span>
+                Write a C program to find larger of two numbers using macros.
+            </p>
+            <pre>
+
+                #include <stdio.h>
+                    #define largest(a,b) (a>b)?a:b
+                    
+                    
+                    int main(){
+                        int x,y;
+                        printf("Enter two numbers: ");
+                        scanf("%d%d",&x,&y);
+                        printf("Maximum of two numbers: %d\n",largest(x,y));
+                        return 0;
+                    }
+            </pre>
+        </div>
+
+
+         <div class="program">
+            <p>
+                <span>4.</span>
+                Write a C program to find the smaller of two numbers using macros.
+            </p>
+            <pre>
+                #include <stdio.h>
+
+                    #define smaller(a,b) (a&ltb)?a:b
+                    
+                    int main(){
+                    
+                        int x,y;
+                         printf("Enter first number: ");
+                        scanf("%d",&x);
+                        printf("Enter second number: ");
+                        scanf("%d",&y);
+                        printf("Minimum number is: %d\n",smaller(x,y));
+                        
+                        return 0;
+                    }
+
+            </pre>
+        </div>
+
+
+         <div class="program">
+            <p>
+                <span>5.</span>
+                Write a C program using macros to find the sum of squares of two numbers.
+            </p>
+            <pre>
+                #include <stdio.h>
+
+                    #define sum(a,b) (a*a + b*b)
+                    int main(){
+                        
+                        int x,y;
+                        printf("Enter any two numbers: ");
+                        scanf("%d%d",&x,&y);
+                        printf("Sum of squares: %d\n",sum(x,y));
+                    }
+
+            </pre>
+        </div>
+
+
+         <div class="program">
+            <p>
+                <span>6. </span>
+                Write a program to print the pascal triangle.
+            </p>
+            <pre>
+
+                #include <stdio.h>
+
+                    int main(){
+                        int rows,i,num,j,x;
+                        printf("Enter number of rows : ");
+                        scanf("%d",&rows);
+                        for(i=1;i<=rows;i++){
+                            int x=1;
+                            for(j=1;j<=(rows-i)+1;j++){
+                                printf(" ");}
+                            
+                            for(num=1;num<=i;num++){
+                                printf("%d ",x);
+                                x  = x* (i-num)/num;
+                            }
+                            printf("\n");
+                            
+                        }
+                        
+                        
+                        return 0;
+                    }
+            </pre>
+        </div>
+
+
+         <div class="program">
+            <p>
+                <span>7.</span>
+                Write a C program to count the lines, words and characters in a given text.
+            </p>
+            <pre>
+                #include <stdio.h>
+                    #include <string.h>
+                    int main(){
+                        char str[10000];
+                        int noOfLines=0,noOfWords=0,noOfChar=0;
+                        printf("Enter lines of text (enter END to complete)");
+                        gets(str);
+                        while(strcmp(str,"END")!=0){
+                            noOfWords++;
+                            
+                        for(int i=0;str[i]!=0;i++){
+                            
+                               
+                               noOfChar++;
+                               
+                                if(str[i]==' ' || str[i]=='\t'){
+                                    noOfWords+=1;
+                                //	noOfChar++;
+                                    
+                                }
+                                
+                        }
+                                    noOfLines++;
+                                    gets(str);
+                            
+                    }
+                        printf("Character = %d, Words = %d, Lines = %d\n",noOfChar,noOfWords,noOfLines);
+                        
+                        return 0;
+                    }
+
+            </pre>
+        </div>
+
+
+
+
+    </div>
+
+    
+</body>
+</html>
+
