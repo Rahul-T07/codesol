@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="cycles.css" />
+  </head>
+  <body>
+    
+    
+  <div class="question">
+    <p><span>1. </span>Write a C program to compute mean, variance, Standard Deviation, sorting of n elements in single dimension array using functions.</p>
+  </div>
+ <div class="solution">
+   <span>CODE : </span>
+   <pre>
+     #include <stdio.h>
+#include <math.h>
+void calculateMean(int [], int);
+float calculateVariance(int [], int);
+float calculateStandardDeviation(int [], int);
+void calculateSort(int [], int);
+int main() {
+	int size,elements,i;
+	
+	printf("Enter size of the array : ");
+	scanf("%d",&size);
+	int arr[size];
+	printf("Enter array elements : ");
+	for(i=0;i &lt size;i++){
+		scanf("%d",&arr[i]);
+	}
+		calculateMean(arr,size);
+
+
+	float var = calculateVariance(arr,size);
+	printf("The variance of elements of the array : %f\n",var);
+
+	float sd = calculateStandardDeviation(arr,size);
+	printf("The Standard Deviation of elements of the array : %f\n",sd);
+
+	calculateSort(arr,size);
+}
+
+
+void calculateMean(int arr[], int number) {
+	float avg,sum;
+	for(int i=0;i &lt number;i++){
+		sum += arr[i];
+	}
+	avg = sum/number;
+
+	printf("The mean of elements of the array : %f\n",avg);
+	
+}
+float calculateVariance(int arr[], int number) {
+	 float sum = 0, var,result;
+	 int i;
+	 for(i=0;i &lt number;i++){
+	 	sum += arr[i];
+	 }
+	 float x = sum/number;
+
+	for(int i=0;i &lt number;i++){
+		var += pow(arr[i]-x,2);
+	
+	}
+
+	result = var / number ;
+
+	return result;
+}
+float calculateStandardDeviation(int arr[], int number) {
+
+float square = sqrt(calculateVariance(arr,number));
+	return square;
+}
+
+
+void calculateSort(int arr[], int number) {
+	for(int i = 0;i &lt number-1;i++){
+		for(int j=i+1;j &lt number;j++){
+			if(arr[i] &gt arr[j]){
+				int num = arr[i];
+				arr[i]=arr[j];
+				arr[j] = num;
+				
+			}
+		
+		}
+	}
+	printf("The elements in array after sorting :");
+	for(int i=0;i &lt number;i++){
+			printf(" %d",arr[i]);
+	}printf("\n");
+	
+
+
+}
+   </pre>
+ </div>
+ 
+    
+  <div class="question">
+    <p><span>2. </span>Write a C program to initially store user-given numbers in an array, display them, and then insert a given number at a given location and delete a number at a given location.</p>
+  </div>
+ <div class="solution">
+   <span>CODE : </span>
+   <pre>
+     #include <stdio.h>
+
+int main(){
+	
+	int size,i,position,option,element;
+	printf("Enter the number of elements of the array: ");
+	scanf("%d",&size);
+	int arr[size];
+	printf("Enter the array elements: ");
+	for(i=0;i &lt size;i++){
+		scanf("%d",&arr[i]);
+	}
+	printf("Enter the position: ");
+	scanf("%d",&position);
+	printf("1. Insert\n2. Delete\n");
+	printf("Enter the option: ");
+	scanf("%d",&option);
+
+	switch(option){
+		case 1:
+		printf("Enter the element: ");
+		scanf("%d",&element);
+		
+		for(i=size;i &gt=position;i--){
+		
+			arr[i]=arr[i-1];
+		}
+			arr[position-1]= element;
+		
+		printf("Array after insertion is: ");
+		for(i=0;i<=size;i++){
+			printf("%d ",arr[i]);
+		}
+		
+		break;
+		case 2:
+		printf("Array after deletion: ");
+		for(i=position-1;i &lt size-1;i++){
+			arr[i]=arr[i+1];
+		}
+		for(i=0;i &lt size-1;i++)
+		printf("%d ",arr[i]);
+		break;
+		
+		
+		
+		
+		
+		default:
+		printf("Enter the correct option\n");
+		
+	}
+}
+   </pre>
+ </div>
+ 
+    
+  <div class="question">
+    <p><span>3. </span></p>
+  </div>
+ <div class="solution">
+   <span>CODE : </span>
+   <pre>
+     #include <stdio.h>
+int main(){
+	int size,i,max,min,index1,index2,j,k;
+	printf("Enter size of the array: ");
+	scanf("%d",&size);
+	int arr[size];
+	printf("Enter elements in array: ");
+	for(i=0;i &lt size;i++){
+		scanf("%d",&arr[i]);
+	}
+max =min = arr[0];
+	for(i=1;i &lt size;i++){
+		if(max &lt arr[i])
+			max =arr[i];
+		
+		if(min &gt arr[i])
+			min = arr[i];
+	}
+	int len = sizeof(arr)/sizeof(arr[0]);
+	index1 =-1;
+	index2 = -1;
+	for(int j=0;j &lt len;j++){
+		if(arr[j]==max){
+			index2 =j;
+			break;
+		}
+		
+	}
+	for(int k=0;k &lt len;k++){
+		if(arr[k]==min){
+			index1 =k;
+			break;
+		}
+	}
+	printf("Index of min element: %d\n",index1);
+	
+	
+	printf("Index of max element: %d\n",index2);
+	
+	int temp =arr[index1];
+	arr[index1] = arr[index2];
+	arr[index2] = temp;
+	
+	printf("Array elements after swapping: ");
+	for(i=0;i &lt size;i++){
+		if(i!=max && i!=min){
+			printf("%d ",arr[i]);
+		}
+		if((i==max) || (i==min))
+		printf("%d ",arr[i]);
+	}
+}
+   </pre>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+  </body>
+</html>
