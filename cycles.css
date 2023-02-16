@@ -1,0 +1,32 @@
+body{
+   margin:0;
+}
+.question{
+    font-size: 190%;
+    border: 2px solid red;
+    padding: 20px;
+    background-color: rgb(64, 219, 82);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-decoration: underline;
+}
+span{
+    color: red;
+    font-size: 170%;
+    text-decoration: underline;
+}
+.solution{
+    margin-left: 0px;
+/*     text-align:center; */
+    background-color: black;
+    color: white;
+    padding: 30px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 220%;
+}
+
+pre{
+   margin : auto;
+}
