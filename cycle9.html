@@ -326,7 +326,7 @@
 
     <div class="solution">
         <span>COODE: </span>
-       <!-- <pre>
+       <pre>
             #include &ltstdio.h&gt
 
                 int main(){
@@ -338,7 +338,7 @@
                     printf("Enter the number of cols: ");
                     scanf("%d",&c1);
                     printf("Enter elements in matrix of size %dx%d",r1,c1);
-                    int a[i][j];
+                    int a[r1][c1],num1=0;
                     for(i=0;i&ltr1;i++){
                         for(j=0;j&ltc1;j++){
                             scanf("%d",&a[i][j]);
@@ -347,20 +347,21 @@
                     for(i=0;i&ltr1;i++){
                         for(j=0;j&ltc1;j++){
                             if(j>i){
+                            num1++;
                                 if(a[i][j]==0){
                                     num++;
                                 }
                             }
                         }
                     }
-                    if(num==3)
-                    printf("Matrix is not a lower triangular matrix\n");
-                    else 
+                    if(num==num1)
                     printf("Matrix is lower triangular matrix\n");
+                    else 
+                    printf("Matrix is not a lower triangular matrix\n");
                     return 0;
                 }
         </pre>
--->
+
         <span> Use the hint of below 6th question and edit the 5th question</span>
     </div>
 
