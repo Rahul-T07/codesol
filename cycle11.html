@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="cycles.css" />
+  </head>
+  <body>
+  <div class="question">
+    <p><span>1. </span>
+        Follow the instructions given below to write a program to open a file and to print its contents on the screen. <br>
+        Open a new file "SampleText1.txt" in write mode <br>
+        Write the content in the file <br>
+        Close the file <br>
+        Open the same file in read mode <br>
+        Read the content from file and print them on the screen <br>
+        Close the file
+</p>
+  </div>
+ <div class="solution">
+  <span>CODE : </span>
+  <pre>
+    #include &ltstdio.h&gt
+        void main() {
+            FILE *fp;
+            char ch;
+            fp = fopen("SampleText1.txt", "w"); // Open a new file in write mode
+            printf("Enter the text with @ at end : ");
+            while ((ch=getchar())!='@') { // Repeat loop till read @ at the end
+                putc(ch,fp); // Put read character onto the file 
+            }
+            putc(ch,fp); // Put delimiter @ at the end on the file
+            fclose(fp); // Close the file
+            fp = fopen("SampleText1.txt", "r"); // Open the existed file in read mode
+            printf("Given message is : ");
+            while ((ch=getc(fp))!='@') { // Repeat loop till get @ at the end of existed file
+                putchar(ch); // Put the character on the screen
+            }
+            printf("\n");
+            fclose(fp); // Close the file
+        }
+  </pre>
+  <pre>
+    
+  </pre>
+ </div>
+ 
+ 
+ <div class="question">
+    <p><span>2. </span>Write a program to copy contents of one file into another file. Follow the instructions given below to write a program to copy the contents of one file to another file:  </p></div>
+ <div class="solution">
+  <span>CODE : </span>
+  <pre>
+    #include &ltstdio.h&gt
+        void main() {
+            FILE *fp, *fp1, *fp2;
+            char ch;
+            fp = fopen("SampleTextFile1.txt", "w"); // Open a new file in write mode
+            printf("Enter the text with @ at end : ");
+            while ((ch=getchar())!='@') { // Read loop till get @ at the end
+                putc(ch, fp);
+            }
+            putc(ch, fp);
+            fclose(fp);
+            fp1 = fopen("SampleTextFile1.txt", "r"); // Open an existed file in read mode
+            fp2 = fopen("SampleTextFile2.txt", "w"); // Open a new file in write mode
+            while ((ch=fgetc(fp1))!='@') { // Repeat loop till get @ at the end of existed file
+                putc(ch, fp2);
+            }
+            putc(ch, fp2);
+            fclose(fp1); // Close the existed file
+            fclose(fp2); // Close the copied file
+            fp2 = fopen("SampleTextFile2.txt", "r"); // Open the copied file in read mode
+            printf("Copied text is : ");
+            while ((ch=fgetc(fp2))!='@') { // Repeat loop till get @ at the end of copied file
+                putchar(ch);
+            }
+            printf("\n");
+            fclose(fp2); // Close the copied file
+        }
+  </pre>
+ </div>
+ 
+
+ <div class="question">
+    <p><span>3. </span>Write a program to append data to an existing file and display its contents. </p> </div>
+ <div class="solution">
+  <span>CODE : </span>
+  <pre>
+    #include &ltstdio.h&gt
+        void main() {
+            FILE *fp;
+            char ch;
+            fp = fopen("DemoTextFile1.txt", "w"); // Open a new file in write mode
+            printf("Enter the text with @ at end : ");
+            while ((ch=getchar())!='@') { // Repeat loop till read @ at the end
+                putc(ch,fp); // Put read character onto the file 
+            }
+            fclose(fp); // Close the file
+            fp = fopen("DemoTextFile1.txt", "a"); // Open the existed file in append mode
+            printf("Enter the text to append to a file with @ at end : ");
+            while ((ch=getchar())!='@') { // Repeat loop till read @ at the end
+                putc(ch,fp); // Put read character onto the file
+            }
+            putc('@',fp); // Put delimiter @ at the end on the file
+            fclose(fp); // Close the file
+            fp = fopen("DemoTextFile1.txt", "r"); // Open the existed file in read mode
+            printf("File content after appending : ");
+            while ((ch=fgetc(fp))!='@') { // Repeat loop till get @ at the end of existed file
+                putchar(ch); // Put the character on the screen
+            }
+            printf("\n");
+            fclose(fp); // Close the file
+        }
+  </pre>
+ </div>
+ 
+
+
+ <!-- <div class="question">
+    <p><span>2. </span>  </div>
+ <div class="solution">
+  <span>CODE : </span>
+  <pre>
+   
+  </pre>
+ </div>
+  -->
+ 
+ 
+ 
+ 
+ 
+ 
+  </body>
+</html>
